@@ -1,0 +1,36 @@
+<%= form_for @baker do |f| %>
+  <% if @baker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@baker.errors.count, "error") %> prohibited
+          this post from being saved:</h2>
+      <ul>
+      <% @baker.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+     </div>
+  <% end %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %><br>
+  </p>
+  
+  <p>
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %><br>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

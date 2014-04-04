@@ -1,5 +1,6 @@
 NkuProject::Application.routes.draw do
-  resources :requests
+  get "logout" => "sessions#destroy", :as => "logout"
+  resources :requests, :bakers, :sessions
   
   root to: "requests#index"
 end

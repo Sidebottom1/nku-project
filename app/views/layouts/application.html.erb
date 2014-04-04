@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container">
+    <div>
+      <% if current_baker.present? %>
+        <%= link_to ' Edit your profile ', edit_baker_path(current_baker.id) %>
+        <%= link_to ' Log out ', logout_path %>
+      <% else %>
+        <%= link_to ' I want to be a baker! ', new_baker_path %>
+        <%= link_to ' Baker sign in ', new_session_path %>
+      <% end %>
+    </div>
+    <%= yield %>
+  </div>
 </body>
 </html>

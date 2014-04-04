@@ -1,0 +1,17 @@
+<% @bakers.each do |baker| %>
+
+  <p>
+    <strong>Baker:</strong>
+    <%= baker.name %>
+  </p>
+  
+  <p>
+    <strong>Email:</strong>
+    <%= baker.email %>
+  </p>
+  
+  <br>
+  <br>
+<% end %>
+
+<%= link_to 'Back to requests', requests_path %>
