@@ -5,11 +5,11 @@ require File.expand_path('../application', __FILE__)
 NkuProject::Application.initialize!
 
 ActionMailer::Base.smtp_settings = {
-  :address          =>   'smtp.sendgrid.net',
-  :port             =>   '587',
+  :address          =>   'smtp.gmail.com',
+  :port             =>   587,
   :authentication   =>   :plain,
-  :user_name        =>   'sidebottom1',
-  :password         =>   'testinguuu',
-  :domain           =>   'example.com',
+  :user_name        =>   ENV.fetch('GMAIL_USERNAME'),
+  :password         =>   ENV.fetch('GMAIL_PASSWORD'),
+  :domain           =>   'gmail.com',
   :enable_starttls_auto  =>  true
 }

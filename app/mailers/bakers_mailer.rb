@@ -1,7 +1,8 @@
 class BakersMailer < ActionMailer::Base
-  default from: 'sidebottom1@nku.edu'
+  default from: ENV.fetch('GMAIL_USERNAME')
   
-  def test_email
-    mail(to: 'sidebottom1@nku.edu', subject: 'Welcome to My Awesome Site', body: 'this worked')
+  def request_email(bakers, request)
+    @request = request
+    mail(to: bakers.email_addresses, subject: 'Hey, listen!')
   end
 end

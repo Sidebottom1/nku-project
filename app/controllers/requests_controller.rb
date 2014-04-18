@@ -8,6 +8,7 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
     
     if @request.save
+      BakersMailer.request_email(Baker.all, @request).deliver
       redirect_to @request, notice: "Your request has been posted."
     else
       render 'new'

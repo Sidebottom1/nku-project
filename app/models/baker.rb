@@ -3,6 +3,10 @@ class Baker < ActiveRecord::Base
   validates_presence_of :password, :on => :create
   validates :email, :uniqueness => true
   
-  
+  def self.email_addresses
+    all.map do |baker|
+      baker.email
+    end
+  end
 
 end
