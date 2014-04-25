@@ -1,7 +1,7 @@
 A baking request was just posted.  Check it out and see if you can help! :)
 <br>
 <br>
-URL at: 'our website'.com/requests/<%= @request.id %> ~ from <%= @request.name %> ~ at <%= @request.email %>
+from <%= link_to @request.name, request_url(@request) %> ~ at <%= @request.email %>
 <br>
 <%= @request.description %>
   

@@ -13,4 +13,10 @@
   <%= @request.description %>
 </p>
 
+<%= form_for @request do |f| %>
+<%= f.hidden_field :baker_id, value: current_baker.id %>
+
+<%= f.submit "Assign this to me!" %>
+<% end %>
+
 <%= link_to 'Back to home', requests_path %>

@@ -15,6 +15,10 @@ class RequestsController < ApplicationController
     end  
   end
   
+  def update
+    params[:request][:baker_id]
+  end
+  
   def index
     @requests = Request.all
   end
@@ -26,7 +30,7 @@ class RequestsController < ApplicationController
   private
     
   def request_params 
-    params.require(:request).permit(:name, :email, :description)
+    params.require(:request).permit(:name, :email, :description, :baker_id)
   end
   
 end

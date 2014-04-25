@@ -40,6 +40,7 @@ class BakersController < ApplicationController
   private
     
   def baker_params
+    params[:baker][:email] = params[:baker][:email].downcase
     params.require(:baker).permit(:name, :email, :password, :password_confirmation)
   end
 end
