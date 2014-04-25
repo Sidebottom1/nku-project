@@ -13,7 +13,7 @@ class BakersController < ApplicationController
     
     if @baker.save
       session[:baker_id] = @baker.id
-      redirect_to @baker, notice: "You have successfully created your student profile."
+      redirect_to @baker, notice: "You have successfully created your baker profile!"
     else
       render 'new'
     end

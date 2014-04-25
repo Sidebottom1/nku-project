@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  
 </head>
 <body>
   <div class="container">
@@ -16,7 +17,13 @@
         <%= link_to ' I want to be a baker! ', new_baker_path %>
         <%= link_to ' Baker sign in ', new_session_path %>
       <% end %>
+      
+      <br>
+      <br>
     </div>
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
     <%= yield %>
   </div>
 </body>
