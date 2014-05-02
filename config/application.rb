@@ -24,6 +24,6 @@ module NkuProject
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    ActionMailer::Base.default_url_options[:host] = "sidebottom1-72843.use1.nitrousbox.com"
+    # ActionMailer::Base.default_url_options[:host] = "sidebottom1-72843.use1.nitrousbox.com"
   end
 end

@@ -16,7 +16,14 @@ class RequestsController < ApplicationController
   end
   
   def update
-    params[:request][:baker_id]
+    @request = Request.find(params[:id])
+    
+    if @request.update(params[:request].permit(:name, :email, :description, :baker_id))
+      redirect_to @request, notice: "You have successfully taken this request."
+    else
+      render 'show'
+    end
+    
   end
   
   def index

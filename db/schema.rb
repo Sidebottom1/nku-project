@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140404200620) do
+ActiveRecord::Schema.define(version: 20140502190209) do
 
   create_table "bakers", force: true do |t|
     t.string "name"
@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(version: 20140404200620) do
   end
 
   create_table "requests", force: true do |t|
-    t.string "name"
-    t.string "email"
-    t.text   "description"
+    t.string  "name"
+    t.string  "email"
+    t.text    "description"
+    t.integer "baker_id"
   end
 
 end
